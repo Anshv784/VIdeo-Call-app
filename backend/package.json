@@ -4,14 +4,21 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "run": "nodemon dist/server.ts"
+    "build": "npx tsc -b",
+    "build:watch": "tsc -w",
+    "start:watch": "nodemon dist/index.js",
+    "dev": "concurrently \"npm run build:watch\" \"npm run start:watch\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@types/dotenv": "^6.1.1",
     "@types/ws": "^8.18.1",
+    "concurrently": "^9.2.0",
+    "dotenv": "^17.2.1",
+    "nodemon": "^3.1.10",
     "react-router-dom": "^7.8.1",
     "typescript": "^5.9.2",
     "ws": "^8.18.3"
